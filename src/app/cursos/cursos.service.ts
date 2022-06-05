@@ -4,9 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CursosService {
+  private cursos: string[] = ['Agular', 'React', 'Vue'];
+
   getCursos() {
-    return ['Angular', 'React', 'Vue'];
+    return this.cursos;
   }
 
-  constructor() {}
+  addCurso(curso: string) {
+    this.cursos.push(curso);
+  }
+
+  constructor() {
+    console.log('CursosService');
+  }
 }
